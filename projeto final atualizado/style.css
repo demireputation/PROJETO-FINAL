@@ -1,0 +1,177 @@
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      background-color: #6c1c64; /* Purple background */
+      font-family: sans-serif;
+      color: white; /* White text */
+      size: 10px 10px;
+      margin: 0;
+    }
+
+    button {
+      background-color: #FFFFFF; /* White button background */
+      border: none; /* Remove default button border */
+      padding: 10px 20px;
+      border-radius: 13px; /* Rounded corners */
+      cursor: pointer; /* Mouse pointer on hover */
+      margin-right: 30px; /* Add some space between buttons */
+    }
+
+
+    .cabeçalho {
+      white-space: nowrap;
+      position: absolute;
+      max-width: max-content;
+      display: inline-block;
+      padding: 10px;
+      align-items: center;
+      text-align: left; /* Add this */
+    }
+
+    .cabeçalho > * {
+      display: inline-block;
+      vertical-align: middle;
+
+    }
+
+    .barrapesquisar {
+      margin-top: 5px;
+      margin-left: 40px; /* Adjust this value */
+      width: 300px;
+      border: 1px solid #FFFFFF;
+      border-radius: 13px;
+      background-color: #fce4fc;
+    }
+
+    .pesquise {
+      margin-right: 100px; /*distancia entre o pesquise e o logo */
+      width: 250px; /* comprimento da caixa */
+      padding: 8px; /* altura da caixa */
+      border:  0px #fce4fc; /* borda branca */
+      border-radius: 13px; /* bordas*/
+      background-color: #fce4fc; /* fundo roxo claro */
+    }
+
+    .lugar {
+      margin-top: 5px;
+      margin-left: 80px;
+      background-color: #6c1c64;
+      border: 1px solid white;
+      padding: 8px;
+      color: white;
+      display: inline-block; /* Add this */
+    }
+    
+    .login .login2 {
+      padding: 8px;
+      width: 100px;
+      background-color: #fce4fc;
+      display: inline-block; /* Add this */
+    }
+    
+    .login .cadastrar {
+      padding: 8px;
+      background-color: #6c1c64;
+      border: 1px solid white;
+      color: white;
+      display: inline-block; /* Add this */
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      margin-left: 230px;
+      margin-right: 500px; /*distancia entre o logo e o login */
+    }
+    #menuToggle{ /*menu hamburguer position fora */
+      display: block;
+      margin-top: 4px;
+      margin-left: 10px;
+      margin-right: 10px;
+      top: 110px;
+      left: px;
+      z-index: 1;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    #menuToggle a{ /*letras do menu*/
+      text-decoration: none;
+      color: #232323;
+      transition: color 0.3s ease;
+    }
+
+    #menuToggle a:hover{ /*letras quando passar mause menu*/
+      color: tomato;
+    }
+
+
+    #menuToggle input{ /*clicar no menu hamburguer*/
+      display: block;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      margin-left: 10px;
+      top: -7px;
+      left: -5px;
+      cursor: pointer;
+      opacity: 0; /* hide this */
+      z-index: 2; /* and place it over the hamburger */
+      -webkit-touch-callout: none;
+    } 
+
+    #menuToggle span{ /*menu hamburguer design fora*/
+      display: block;
+      width: 33px;
+      height: 4px;
+      margin-bottom: 5px;
+      position: relative;
+      background: #cdcdcd;
+      border-radius: 3px;
+      z-index: 1;
+      transform-origin: 4px 0px;
+      transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+      background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+      opacity 0.55s ease;
+    }
+
+    #menuToggle input:checked ~ span{ /*tranformaçao do = pro X */
+      opacity: 1;
+      transform: rotate(45deg) translate(-2px, -1px);
+      background: #232323;
+    }
+
+    #menuToggle input:checked ~ span:nth-last-child(3){ /*tranformaçao do = pro X */
+      opacity: 0;
+      transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    #menuToggle input:checked ~ span:nth-last-child(2){ /*tranformaçao do = pro X */
+      transform: rotate(-45deg) translate(0, -1px);
+    }
+
+    #menu{ /* menu dentro do hamburguer design*/
+      position: absolute;
+      width: 170px;
+      margin: -100px 0 0 -50px;
+      padding: 50px;
+      padding-top: 125px;
+      background: #ededed;
+      list-style-type: none;
+      -webkit-font-smoothing: antialiased;
+      transform-origin: 0% 0%;
+      transform: translate(-100%, 0);
+      transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    }
+
+    #menu li{ /* letras dentro menu hamburguer*/
+      padding: 10px 0;
+      font-size: 22px;
+    }
+
+    #menuToggle input:checked ~ ul{ /* menu ligar*/
+      transform: none;
+    }
